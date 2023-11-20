@@ -15,17 +15,7 @@ public interface IHealth
     float CurrentHealth { get; set; }
     void UpdateHealth(float health);
 }
-public interface IObserverUnit
-{
-    void UpdateTarget(BaseUnit target);
-}
-public interface IObservable
-{
-    void AddObserver(IObserverUnit observer);
-    void RemoveObserver(IObserverUnit observer);
-    void NotifyAllObservers();
-}
-public abstract class BaseUnit : MonoBehaviour, IHealth, IObserverUnit
+public abstract class BaseUnit : MonoBehaviour, IHealth
 {
     [SerializeField] private Animator _animator;
     protected BaseUnit targetUnit;
